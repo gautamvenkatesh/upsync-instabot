@@ -34,6 +34,7 @@ def send_messages(sendee_list):
     username_input = browser.find_element_by_css_selector("input[name='username']")
     password_input = browser.find_element_by_css_selector("input[name='password']")
 
+    #PLACE UR USERNAME AND PASSWORD HERE
     username_input.send_keys("<username>")
     password_input.send_keys("<password>")
 
