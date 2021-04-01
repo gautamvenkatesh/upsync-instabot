@@ -1,7 +1,7 @@
 # upsync-instabot
 
 Automates instagram dms
-NOTE: Does not handle error very well so follow carefully
+\NOTE: Does not handle error very well so follow carefully
 
 Steps (Kinda annoying):
 
