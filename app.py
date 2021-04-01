@@ -34,8 +34,8 @@ def send_messages(sendee_list):
     username_input = browser.find_element_by_css_selector("input[name='username']")
     password_input = browser.find_element_by_css_selector("input[name='password']")
 
-    username_input.send_keys("gautamvenky")
-    password_input.send_keys("Insta314209!")
+    username_input.send_keys("<username>")
+    password_input.send_keys("<password>")
 
     login_button = browser.find_element_by_xpath("//button[@type='submit']")
     login_button.click()
