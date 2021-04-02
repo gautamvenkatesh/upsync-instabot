@@ -58,37 +58,40 @@ def send_messages(sendee_list):
     sleep(2)
 
     for recipient in sendee_list:
+        try:
+            create_message_button = browser.find_element_by_xpath("//button[contains(@class, 'wpO6b ZQScA ')]")
+            create_message_button.click()
 
-        create_message_button = browser.find_element_by_xpath("//button[contains(@class, 'wpO6b ZQScA ')]")
-        create_message_button.click()
+            sleep(2)
 
-        sleep(2)
+            search_for_person = browser.find_element_by_css_selector("input[name='queryBox']")
+            search_for_person.send_keys(recipient[0]) #change to each influencer
 
-        search_for_person = browser.find_element_by_css_selector("input[name='queryBox']")
-        search_for_person.send_keys(recipient[0]) #change to each influencer
+            sleep(2)
 
-        sleep(2)
+            select_person = browser.find_element_by_xpath("//button[@class='dCJp8 ']")
+            select_person.click()
 
-        select_person = browser.find_element_by_xpath("//button[@class='dCJp8 ']")
-        select_person.click()
+            sleep(1)
 
-        sleep(1)
+            select_next = browser.find_element_by_xpath("//button[contains(@class, 'sqdOP yWX7d    y3zKF   cB_4K  ')]")
+            select_next.click()
 
-        select_next = browser.find_element_by_xpath("//button[contains(@class, 'sqdOP yWX7d    y3zKF   cB_4K  ')]")
-        select_next.click()
+            sleep(1)
 
-        sleep(1)
+            message_type_area_div = browser.find_element_by_xpath("//div[contains(@class, '                     Igw0E     IwRSH      eGOV_        vwCYk                                        ItkAi                                                                       ')]")
+            message_type_area = message_type_area_div.find_elements_by_xpath(".//*")[0]
+            message_type_area.send_keys(recipient[1]) #change to personal message
 
-        message_type_area_div = browser.find_element_by_xpath("//div[contains(@class, '                     Igw0E     IwRSH      eGOV_        vwCYk                                        ItkAi                                                                       ')]")
-        message_type_area = message_type_area_div.find_elements_by_xpath(".//*")[0]
-        message_type_area.send_keys(recipient[1]) #change to personal message
+            sleep(1)
 
-        sleep(1)
+            send_message = browser.find_element_by_xpath("//button[text()='Send']")
+            send_message.click()
 
-        send_message = browser.find_element_by_xpath("//button[text()='Send']")
-        send_message.click()
-
-        sleep(1)
+            sleep(1)
+        except:
+            print(f"Failed to send to {recipient[0]}")
+            continue
 
     
 
