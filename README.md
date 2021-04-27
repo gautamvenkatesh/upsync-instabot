@@ -6,8 +6,8 @@ NOTE: Does not handle error very well so follow carefully
 
 Steps (Kinda annoying):
 
-1. Install the relevant chromedriver from https://sites.google.com/a/chromium.org/chromedriver/downloads
-2. Install selenium (```pip3 install selenium``` on mac pretty sure)
+1. Install selenium (```pip3 install selenium``` on mac pretty sure)
+2. Install the relevant chromedriver from https://sites.google.com/a/chromium.org/chromedriver/downloads 
 3. Move it to the PATH (on mac/linux you can do ```sudo cp ~/Downloads/chromedriver /usr/local/bin```
 4. Make your messages in a spreadsheet. Make the first column the instagram handle (if this is wrong it kind of breaks) and the second column the message.
 5. Download the spreadsheet as a CSV file
